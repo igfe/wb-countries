@@ -23,6 +23,7 @@ This program makes an interactive graph of key economic indicators. It is curren
 - **y axis** - total fertility rate
 - **size** - population
 - **color** - life expectancy
+
 Example ouput is given below:
 ![image](res/example.png)
 
