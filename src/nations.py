@@ -4,7 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import mplcursors
 
-# indicator_names = {z["code"]: z["name"] for z in info.items
+# shorthand codes for WB data string
+# make this into a dict of dicts with name info attached
 indicator_codes = {"GDP": "NY.GDP.MKTP.CD", "GDPG": "NY.GDP.MKTP.KD.ZG", "TFR":"SP.DYN.TFRT.IN", 
 		"GDPC": "NY.GDP.PCAP.CD", "POP":"SP.POP.TOTL", "HDI": "UNDP.HDI.XD", "LX": "SP.DYN.LE00.IN",
 		"GDPCP": "NY.GDP.PCAP.PP.CD"}
@@ -13,7 +14,8 @@ country_codes = wb.region.members("wld")
 
 def _get_data(indicator):
 	"""
-		returns only fields with value from last two years
+		get data from specified indicator. 
+		Return only results with data from 2020 or 2021
 	"""
 	print(f"_get_data for {indicator}")
 	df = wb.data.DataFrame(indicator_codes[indicator], country_codes, [2020,2021])
@@ -25,6 +27,10 @@ def _get_data(indicator):
 	return df
 
 def get_data(indicators=["GDPC", "TFR", "POP", "LX"]):
+	"""
+		get data from specified indicators
+		return only data where there are non NaNs for the two most recent years
+	"""
 	dfs = [] 
 	for i in indicators:
 		dfs += [_get_data(i)]
@@ -35,11 +41,20 @@ def get_data(indicators=["GDPC", "TFR", "POP", "LX"]):
 	return df
 
 def add_names(df):
+	"""
+		add a names column to the df based on the ISO country code
+	"""
 	ndf = wb.economy.DataFrame(df.index)
 	df = df.assign(name=ndf["name"])
 	return df
 
 def plot(df):
+	"""
+		make a pretty and interactive graph of the df.
+		the x and y values are from the first and second columns
+		the size is from the third column
+		the color is from the fourth column
+	"""
 	cols = df.columns
 	xs = df.iloc[:,0].values
 	ys = df.iloc[:,1].values
@@ -57,40 +72,20 @@ def plot(df):
 
 
 	ax.scatter(xs, ys, s=ssm, c=csm, alpha=0.7)
+	plt.title("gdp vs tfr on x and y axis\nsize = population\ncolor = life expectancy")
+	# ax.legend(['sizes = population', 'colors = life expectancy', [df, df]])
 	
-	mplcursors.cursor(ax, hover=True).connect("add", lambda sel: sel.annotation.set_text(names[sel.index] + #))
+	mplcursors.cursor(ax, hover=True).connect("add", 
+		lambda sel: sel.annotation.set_text(names[sel.index] +
 		f"\n{cols[0]}: {xs[sel.index]:2.2e}" + 
 		f"\n{cols[1]}: {ys[sel.index]}" +
 		f"\n{cols[2]}: {ss[sel.index]}" +
 		f"\n{cols[3]}: {cs[sel.index]}")) 
-		# +f"\n{f1}:{f1s[sel.target.index]}\n{f2}:{f2s[sel.target.index]}\n{f3}:{f3s[sel.target.index]:e}\n{country_codes[sel.target.index]}"))
-
 	plt.show()
 
-
-indicators=["GDPC", "TFR", "POP", "LX"]
-
-# df = get_data(indicators)
-plot(df)
-
-# indicators=["gdp", "tfr"] #, "pop", "lx"]
-# ic = {z: indicator_codes[z] for z in indicators}
-# breakpoint()
-# print(ic.values())
-# df = df.iloc[:,[-2,-1]]
-# print(df)
-
-# if __name__ == '__main__':
-# 	get_data()
-# help(wb)  
-# help(wb.series)  
-# rewrite all code systematically to use `wbgapi` instead of `wbpy`
-
-
-# api = wbpy.IndicatorAPI()
-
-# iso_country_codes = ["GB", "FR", "JP"]
-# total_population = "SP.POP.TOTL"
-
-# dataset = api.get_dataset(total_population, iso_country_codes, date="2010:2022")
-# print(dataset)
+if __name__ == '__main__':
+	indicators = ["GDPC", "TFR", "POP", "LX"]
+	# df = get_data(indicators)
+	# df.to_pickle("res/standard.pkl")
+	df = pd.read_pickle('res/standard.pkl')
+	plot(df)
