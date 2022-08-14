@@ -26,6 +26,7 @@ This program makes an interactive graph of key economic indicators. It is curren
 
 Example ouput is given below:
 ![image](res/example.png)
+Hovering over any of the datapoints will display information as in the **guam** example.
 
 ## TODO
 - add user defined economic indicators
