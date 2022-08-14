@@ -38,8 +38,26 @@ country_codes = ['ABW', 'AFG', 'AGO', 'ALB', 'AND', 'ARB', 'ARE', 'ARG', 'ARM',
  'TGO', 'THA', 'TJK', 'TKM', 'TLA', 'TLS', 'TMN', 'TON', 'TSA', 'TSS', 'TTO', 
  'TUN', 'TUR', 'TUV', 'TZA', 'UGA', 'UKR', 'UMC', 'URY', 'USA', 'UZB', 'VCT', 
  'VEN', 'VGB', 'VIR', 'VNM', 'VUT', 'WLD', 'WSM', 'XKX', 'YEM', 'ZAF', 'ZMB', 'ZWE']
-# country_codes = ['AW', 'AF', 'AO', 'AL', 'AD', '1A', 'AE', 'AR', 'AM', 'AS', 'AG', 'AU', 'AT', 'AZ', 'BI', 'BE', 'BJ', 'BF', 'BD', 'BG', 'BH', 'BS', 'BA', 'BY', 'BZ', 'BM', 'BO', 'BR', 'BB', 'BN', 'BT', 'BW', 'CF', 'CA', 'B8', 'CH', 'JG', 'CL', 'CN', 'CI', 'CM', 'CD', 'CG', 'CO', 'KM', 'CV', 'CR', 'S3', 'CU', 'CW', 'KY', 'CY', 'CZ', 'DE', 'DJ', 'DM', 'DK', 'DO', 'DZ', '4E', 'V2', 'Z4', '7E', 'Z7', 'EC', 'EG', 'XC', 'ER', 'ES', 'EE', 'ET', 'EU', 'F1', 'FI', 'FJ', 'FR', 'FO', 'FM', 'GA', 'GB', 'GE', 'GH', 'GI', 'GN', 'GM', 'GW', 'GQ', 'GR', 'GD', 'GL', 'GT', 'GU', 'GY', 'XD', 'HK', 'HN', 'XE', 'HR', 'HT', 'HU', 'XF', 'ZT', 'XG', 'XH', 'ID', 'XI', 'IM', 'IN', 'IE', 'IR', 'IQ', 'IS', 'IL', 'IT', 'JM', 'JO', 'JP', 'KZ', 'KE', 'KG', 'KH', 'KI', 'KN', 'KR', 'KW', 'XJ', 'LA', 'LB', 'LR', 'LY', 'LC', 'ZJ', 'XL', 'XM', 'LI', 'LK', 'XN', 'XO', 'LS', 'V3', 'LT', 'LU', 'LV', 'MO', 'MF', 'MA', 'MC', 'MD', 'MG', 'MV', 'ZQ', 'MX', 'MH', 'XP', 'MK', 'ML', 'MT', 'MM', 'XQ', 'ME', 'MN', 'MP', 'MZ', 'MR', 'MU', 'MW', 'MY', 'XU', 'NA', 'NC', 'NE', 'NG', 'NI', 'NL', 'NO', 'NP', 'NR', 'NZ', 'OE', 'OM', 'S4', 'PK', 'PA', 'PE', 'PH', 'PW', 'PG', 'PL', 'V1', 'PR', 'KP', 'PT', 'PY', 'PS', 'S2', 'V4', 'PF', 'QA', 'RO', 'RU', 'RW', '8S', 'SA', 'SD', 'SN', 'SG', 'SB', 'SL', 'SV', 'SM', 'SO', 'RS', 'ZF', 'SS', 'ZG', 'S1', 'ST', 'SR', 'SK', 'SI', 'SE', 'SZ', 'SX', 'SC', 'SY', 'TC', 'TD', 'T4', 'T7', 'TG', 'TH', 'TJ', 'TM', 'T2', 'TL', 'T3', 'TO', 'T5', 'T6', 'TT', 'TN', 'TR', 'TV', 'TZ', 'UG', 'UA', 'XT', 'UY', 'US', 'UZ', 'VC', 'VE', 'VG', 'VI', 'VN', 'VU', '1W', 'WS']
-# print("Country Codes")
+# country_codes = ['AW', 'AF', 'AO', 'AL', 'AD', '1A', 'AE', 'AR', 'AM', 'AS', 'AG',
+#  'AU', 'AT', 'AZ', 'BI', 'BE', 'BJ', 'BF', 'BD', 'BG', 'BH', 'BS', 'BA', 'BY', 'BZ',
+#  'BM', 'BO', 'BR', 'BB', 'BN', 'BT', 'BW', 'CF', 'CA', 'B8', 'CH', 'JG', 'CL', 'CN',
+#  'CI', 'CM', 'CD', 'CG', 'CO', 'KM', 'CV', 'CR', 'S3', 'CU', 'CW', 'KY', 'CY', 'CZ', 
+#  'DE', 'DJ', 'DM', 'DK', 'DO', 'DZ', '4E', 'V2', 'Z4', '7E', 'Z7', 'EC', 'EG', 'XC', 
+#  'ER', 'ES', 'EE', 'ET', 'EU', 'F1', 'FI', 'FJ', 'FR', 'FO', 'FM', 'GA', 'GB', 'GE', 
+#  'GH', 'GI', 'GN', 'GM', 'GW', 'GQ', 'GR', 'GD', 'GL', 'GT', 'GU', 'GY', 'XD', 'HK', 
+#  'HN', 'XE', 'HR', 'HT', 'HU', 'XF', 'ZT', 'XG', 'XH', 'ID', 'XI', 'IM', 'IN', 'IE', 
+#  'IR', 'IQ', 'IS', 'IL', 'IT', 'JM', 'JO', 'JP', 'KZ', 'KE', 'KG', 'KH', 'KI', 'KN', 
+#  'KR', 'KW', 'XJ', 'LA', 'LB', 'LR', 'LY', 'LC', 'ZJ', 'XL', 'XM', 'LI', 'LK', 'XN', 
+#  'XO', 'LS', 'V3', 'LT', 'LU', 'LV', 'MO', 'MF', 'MA', 'MC', 'MD', 'MG', 'MV', 'ZQ', 
+#  'MX', 'MH', 'XP', 'MK', 'ML', 'MT', 'MM', 'XQ', 'ME', 'MN', 'MP', 'MZ', 'MR', 'MU', 
+#  'MW', 'MY', 'XU', 'NA', 'NC', 'NE', 'NG', 'NI', 'NL', 'NO', 'NP', 'NR', 'NZ', 'OE', 
+#  'OM', 'S4', 'PK', 'PA', 'PE', 'PH', 'PW', 'PG', 'PL', 'V1', 'PR', 'KP', 'PT', 'PY', 
+#  'PS', 'S2', 'V4', 'PF', 'QA', 'RO', 'RU', 'RW', '8S', 'SA', 'SD', 'SN', 'SG', 'SB', 
+#  'SL', 'SV', 'SM', 'SO', 'RS', 'ZF', 'SS', 'ZG', 'S1', 'ST', 'SR', 'SK', 'SI', 'SE', 
+#  'SZ', 'SX', 'SC', 'SY', 'TC', 'TD', 'T4', 'T7', 'TG', 'TH', 'TJ', 'TM', 'T2', 'TL', 
+#  'T3', 'TO', 'T5', 'T6', 'TT', 'TN', 'TR', 'TV', 'TZ', 'UG', 'UA', 'XT', 'UY', 'US', 
+#  'UZ', 'VC', 'VE', 'VG', 'VI', 'VN', 'VU', '1W', 'WS']
+
 # print(country_codes)
 
 codes = {"gdp": "NY.GDP.MKTP.CD", "gdpg": "NY.GDP.MKTP.KD.ZG", "tfr":"sp.dyn.tfrt.in", 
