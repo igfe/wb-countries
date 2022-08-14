@@ -1,5 +1,5 @@
 # wb-countries
-View interactive graphs in python based on 4 economic indicators
+Interactive graph based on 4 economic indicators from [World Bank Open Data](https://data.worldbank.org/)
 
 ## running
 To run this project, it is assumed that [python-is-python3](https://askubuntu.com/questions/1296790/python-is-python3-package-in-ubuntu-20-04-what-is-it-and-what-does-it-actually) recommended that you understand how to use [venv](https://docs.python.org/3/library/venv.html). 
