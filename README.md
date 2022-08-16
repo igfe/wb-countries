@@ -30,6 +30,6 @@ Hovering over any of the datapoints will display information as in the **guam** 
 
 ## TODO
 - add user defined economic indicators
-	- intelligently scale/format axis, and sizes based on the distribution of indicators
+	- intelligently scale/format axes, and sizes based on the distribution of indicators
 	- add command line interface
 - maybe use something like `d3.js` to make it a web app
