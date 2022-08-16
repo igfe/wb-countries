@@ -6,8 +6,9 @@ import mplcursors
 
 # shorthand codes for WB data string
 # make this into a dict of dicts with name info attached
-indicator_codes = {"GDP": "NY.GDP.MKTP.CD", "GDPG": "NY.GDP.MKTP.KD.ZG", "TFR":"SP.DYN.TFRT.IN", 
-		"GDPC": "NY.GDP.PCAP.CD", "POP":"SP.POP.TOTL", "HDI": "UNDP.HDI.XD", "LX": "SP.DYN.LE00.IN",
+indicator_codes = {"GDP": "NY.GDP.MKTP.CD", "GDPG": "NY.GDP.MKTP.KD.ZG", 
+		"TFR":"SP.DYN.TFRT.IN", "GDPC": "NY.GDP.PCAP.CD", "POP":"SP.POP.TOTL", 
+		"HDI": "UNDP.HDI.XD", "LX": "SP.DYN.LE00.IN", 
 		"GDPCP": "NY.GDP.PCAP.PP.CD"}
 
 country_codes = wb.region.members("wld")
@@ -15,7 +16,7 @@ country_codes = wb.region.members("wld")
 def _get_data(indicator):
 	"""
 		get data from specified indicator. 
-		Return only results with data from 2020 or 2021
+		Return only results with data from 2020 either 2021
 	"""
 	print(f"_get_data for {indicator}")
 	df = wb.data.DataFrame(indicator_codes[indicator], country_codes, [2020,2021])
@@ -29,7 +30,8 @@ def _get_data(indicator):
 def get_data(indicators=["GDPC", "TFR", "POP", "LX"]):
 	"""
 		get data from specified indicators
-		return only data where there are non NaNs for the two most recent years
+		return only data where there is at data for at least one of the last two
+		years
 	"""
 	dfs = [] 
 	for i in indicators:
@@ -72,7 +74,7 @@ def plot(df):
 
 
 	ax.scatter(xs, ys, s=ssm, c=csm, alpha=0.7)
-	plt.title("gdp vs tfr on x and y axis\nsize = population\ncolor = life expectancy")
+	plt.title("gdp per capita vs tfr on x and y axis\nsize = population\ncolor = life expectancy")
 	# ax.legend(['sizes = population', 'colors = life expectancy', [df, df]])
 	
 	mplcursors.cursor(ax, hover=True).connect("add", 
